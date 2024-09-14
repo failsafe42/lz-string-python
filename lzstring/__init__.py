@@ -426,7 +426,7 @@ class LZString(object):
             return ""
         if compressed == "":
             return None
-        return _decompress(len(compressed), 16384, lambda index: compressed[index] - 32)
+        return _decompress(len(compressed), 16384, lambda index: ord(compressed[index]) - 32)
 
     @staticmethod
     def decompressFromBase64(compressed):
